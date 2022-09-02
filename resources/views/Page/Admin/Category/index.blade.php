@@ -1,31 +1,46 @@
-@extends('Admin')
+@extends('Admin.Admin')
 @section('adminContent')
-<div class='stats-last-agile'>
-    <table class="table stats-table ">
-        <thead class="thead-inverse">
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th >Action</th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody>
-                @foreach ($data as $item)
-                    <tr>
-                        <td>{{$item->category_id}}</td>
-                        <td>{{$item->category_name}}</td>
-                        <td colspan="2" ><a name="" id="" class="btn btn-info" href="#" role="button">Edit</a></td>
-                        <td ><a name="" id="" class="btn btn-danger" href="#" role="button">Delete</a></td>
-                    </tr>
-                @endforeach
-               <tr>
-                <td><a name="" id="" class="btn btn-primary" href="#" role="button">Add</a></td>
-               </tr>
-            </tbody>
-    </table>
-    {{$data->links()}}
+<div class="col-lg-12">
+    <section class="panel">
+        <header class="panel-heading">
+            Basic validations
+            <span class="tools pull-right">
+                <a class="fa fa-chevron-down" href="javascript:;"></a>
+                <a class="fa fa-cog" href="javascript:;"></a>
+                <a class="fa fa-times" href="javascript:;"></a>
+             </span>
+        </header>
+        <div class="panel-body">
+            <form role="form" class="form-horizontal ">
+                <div class="form-group has-success">
+                    <label class="col-lg-3 control-label">sample 1</label>
+                    <div class="col-lg-6">
+                        <input type="text" placeholder="" id="f-name" class="form-control">
+                        <p class="help-block">Successfully done</p>
+                    </div>
+                </div>
+                <div class="form-group has-error">
+                    <label class="col-lg-3 control-label">sample 2</label>
+                    <div class="col-lg-6">
+                        <input type="text" placeholder="" id="l-name" class="form-control">
+                        <p class="help-block">You gave a wrong info</p>
+                    </div>
+                </div>
+                <div class="form-group has-warning">
+                    <label class="col-lg-3 control-label">sample 3</label>
+                    <div class="col-lg-6">
+                        <input type="email" placeholder="" id="email2" class="form-control">
+                        <p class="help-block">Something went wrong</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-lg-offset-3 col-lg-6">
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
 </div>
-
-
 @endsection

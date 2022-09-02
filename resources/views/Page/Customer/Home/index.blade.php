@@ -1,4 +1,4 @@
-@extends('Customer')
+@extends('Customer.Customer')
 @section('Content')
     <!-- Product Catagories Area Start -->
     <div class="products-catagories-area clearfix">
