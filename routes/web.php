@@ -17,14 +17,21 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//
+//Route::get('/',function (\App\Repositories\Products\ProductsRepositoriesinterface $productsRepositoriesinterface){
+  //  return $productsRepositoriesinterface->getAll();
+//});
+Route::get('/',function (\App\Service\Products\ProductServicesInterface $productServices){
+    return $productServices->getAll();
+});
 // Admin
 Route::group(['namespace'=>'Admin'],function(){
     Route::prefix('Admin')->group(function(){
         Route::get('/','AdminController@index');
         Route::prefix('AuthAdmin')->group(function () {
             Route::get('/','AdminController@index')->name('AuthAdmin.index');
-            Route::post('/','AdminController@Login')->name('AuthAdmin.Login'); 
+            Route::post('/','AdminController@Login')->name('AuthAdmin.Login');
         });
-       
+
     });
 });
